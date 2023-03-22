@@ -14,7 +14,8 @@ public class TestSobreescritura {
         
         empleado = new Gerente("Roman", 12000, "Contabilidad");
         // System.out.println("gerente = " + gerente.obtenerDetalles());
-        imprimir(empleado);
+        imprimir(empleado); // -> Empleado empleado = new Gerente("Roman", 12000, "Contabilidad"); -> Cast -> Toma el metodo obtenerDetalles()
+        // de la clase hija porque tanto padre como hija tiene la clase. 
     }
     
     public static void imprimir(Empleado empleado){

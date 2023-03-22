@@ -11,18 +11,16 @@ public class TestArgumentosVariables {
         
     }
     
-    private static void imprimirNumeros(int...numeros){
+    private static void imprimirNumeros(int ...numeros){
             for (int i = 0; i < numeros.length; i++) {
                 System.out.println("elemento["+ i + "] = " + numeros[i]);
             }
     }
     
-    private static void variosParametros(String nombre, int... numeros){
-        
+    private static void variosParametros(String nombre, int ...numeros){
+        /* Cuando tenemos varios parametros, el argumento variable debe ser el ultimo en ingresarse. */
         System.out.println("nombre = " + nombre);
-        imprimirNumeros(numeros);
-        
-    }
-    /* Cuando tenemos varios parametros, el argumento variable debe ser el ultimo en ingresarse. */
+        imprimirNumeros(numeros);    
+    } 
     
 }

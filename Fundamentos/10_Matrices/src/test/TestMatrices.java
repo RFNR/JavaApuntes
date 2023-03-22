@@ -8,6 +8,8 @@ public class TestMatrices {
     
     public static void main(String[] args) {
         
+        // https://www.youtube.com/watch?v=B46f8nOnNbc
+        
         int edades[][] = new int[3][2]; // Definicion de una matriz de 3 filas por 2 columnas.
         System.out.println("edades = " + edades); // edades = [[I@378bf509
         
@@ -19,7 +21,9 @@ public class TestMatrices {
         edades[2][1] = 9;
         
         
-        System.out.println("edades[2][0] = " + edades[2][0]);
+        System.out.println("edades[2][0] -> " + edades[2][0]);
+        System.out.println("Cantidad de filas = " + edades.length);
+        System.out.println("Cantidad de columnas = " + edades[0].length); // Ponemos el 0 como podriamos haber puesto el 1 y 2.
         
         for(var fila = 0 ; edades.length > fila; fila++){    
             for(var colum = 0 ; edades[fila].length > colum; colum++){

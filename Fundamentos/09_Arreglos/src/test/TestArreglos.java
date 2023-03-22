@@ -25,7 +25,7 @@ public class TestArreglos {
         sino en tiempo de ejecucion. */
         
         for(var i = 0 ; edades.length > i; i++){
-            System.out.println("edades["+i+"] = " + edades[i]);
+            System.out.println("edades["+i+"] -> " + edades[i]);
         }
         
         

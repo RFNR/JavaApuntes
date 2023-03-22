@@ -7,10 +7,9 @@ public class TestArreglosObject {
     
     public static void main(String[] args) {
         
-        Persona personas[] = new Persona[2];
-        /* El valor por defecto en cada posicion de un arreglo de tipo Object es null. */
-        
-        for(var i = 0 ; personas.length > i; i++){
+        Persona personas[] = new Persona[2]; 
+         
+        for(var i = 0 ; personas.length > i; i++){ /* El valor por defecto en cada posicion de un arreglo de tipo Object es null. */
             System.out.println("personas["+i+"] = " + personas[i]);
         }
         

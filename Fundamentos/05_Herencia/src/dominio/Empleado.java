@@ -16,7 +16,7 @@ public class Empleado extends Persona{
 
     public Empleado(String nombre, double sueldo) {
         // super(nombre); -> se manda a llamar al constructor 2 del padre. 
-        this(); /* -> se manda a llamar al constructor vacio de esta clase. Podemos especificar a que 
+        this(); /* -> se manda a llamar al constructor vacio de ESTA clase. Podemos especificar a que 
         constructor llamar dependiendo de la cantidad y el tipo de argumentos que recibe el this(). En este 
         caso solo tenemos un constructor vacio que no recibe argumentos.  
         Solo se puede realizar una llamada a un constructor por constructor. Por lo tanto, no podemos 

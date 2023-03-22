@@ -84,8 +84,9 @@ public class HolaMundo { // La clase se accede de manera pública.
 
         //----------------------------------------------------------------------------------------------------------
         // Tipos primitivos de enteros: byte, short, int, long.
+        
         byte numeroByte = 10;
-        System.out.println("Vlor minimo del byte: " + Byte.MIN_VALUE); // -128
+        System.out.println("Valor minimo del byte: " + Byte.MIN_VALUE); // -128
         System.out.println("Valor maximo del byte: " + Byte.MAX_VALUE); // 127
         // Si definimos algun valor fuera del limite, nos tira error.
 
@@ -142,6 +143,8 @@ public class HolaMundo { // La clase se accede de manera pública.
 
         int unCaracter5 = '!';
         System.out.println(unCaracter5); // 33 -> int
+        int unCaracter5 = 'a';
+        System.out.println(unCaracter5); // 97 -> int
 
         boolean varBoolean = true;
         boolean varBoolean2 = false;
@@ -158,7 +161,7 @@ public class HolaMundo { // La clase se accede de manera pública.
         // Conversion de tipos
         // https://www.youtube.com/watch?v=-U0PDV4LhhM
         // string a entero
-        var edad = Integer.parseInt("20");
+        var edad = Integer.parseInt("20"); // Convierte un string a un entero
         System.out.println(edad + 10); // 30
         // string a double
         var valorPI = Double.parseDouble("3.1416");
@@ -175,14 +178,14 @@ public class HolaMundo { // La clase se accede de manera pública.
         System.out.println(((Object) mensaje).getClass().getSimpleName()); // String
         System.out.println(((Object) edad).getClass().getSimpleName()); // Integer
 
-        var edadTexto = String.valueOf(edad);
+        var edadTexto = String.valueOf(edad); // Convierte un entero a string
         System.out.println(edadTexto); // 25
         System.out.println(((Object) edadTexto).getClass().getSimpleName()); // String
 
         //----------------------------------------------------------------------------------------------------------
         var caracter = "Hola".charAt(3);
         System.out.println(caracter); // a 
-        System.out.println(((Object) caracter).getClass().getSimpleName()); // Character -> tipo char
+        System.out.println(((Object) caracter).getClass().getSimpleName()); // Character 
         System.out.println("Proporciona un caracter: ");
         var consola = new Scanner(System.in);
         caracter = consola.nextLine().charAt(0); 
@@ -295,8 +298,7 @@ public class HolaMundo { // La clase se accede de manera pública.
         } // Esta bien, soportamos estos navegadores tambien.
        
         //----------------------------------------------------------------------------------------------------------
-        // Bucles -> Igual que en js -> https://www.manualweb.net/java/sentencias-bucle-java/ -> en los for declarar 
-        // el contador con var.
+        // Bucles -> Igual que en js -> https://www.manualweb.net/java/sentencias-bucle-java/ 
         // Break y continue -> igual que en js
         // Break y continue con etiquetas:
         

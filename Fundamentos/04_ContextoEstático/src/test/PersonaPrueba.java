@@ -14,7 +14,8 @@ public class PersonaPrueba {
         Persona persona2 = new Persona("Karla"); 
         System.out.println("persona2 = " + persona2); // persona2 = Persona{idPersona=2, nombre=Karla}
         
-        imprimir(persona1); // Solo se pueden llamar metodos y variables estaticos dentro de un metodo estatico. -> persona = Persona{idPersona = 1, nombre = Juan}
+        imprimir(persona1); // Solo se pueden llamar metodos y variables estaticos dentro de un metodo estatico. -> 
+        // persona = Persona{idPersona = 1, nombre = Juan}
         imprimir(persona2); // persona = Persona{idPersona = 2, nombre = Karla}
         // Dentro de metodo estatico no se puede usar this.
         // this.contador = 10; -> error

@@ -13,9 +13,6 @@ public class Gerente extends Empleado{
     @Override
     public String obtenerDetalles(){
         return super.obtenerDetalles() + ", departamento: " + this.departamento;
-        /* Esto es lo mismo que lo de arriba: 
-        return "nombre: " + nombre + ", sueldo: "+ sueldo + ", departamento: " + this.departamento;
-        */
     }
     
     

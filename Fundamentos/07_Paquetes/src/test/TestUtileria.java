@@ -4,7 +4,7 @@ package test;
 // import ar.com.namepageweb.*; -> Se importan todas las clases de la carpeta ar/com/namepageweb. Metodo 1.
 // Esta sintaxis no hace mas lento nustro programa.
 // import ar.com.namepageweb.Utileria; // Se importa solo la clase Utileria. Metodo 2. 
-// import static ar.com.namepageweb.Utileria.imprimir; // Podemos usar el metodo imprimir sin llamar a la clase. Metodo 3.
+// static ar.com.namepageweb.Utileria.imprimir; // Podemos usar el metodo imprimir sin llamar a la clase. Metodo 3.
 
 public class TestUtileria {
     

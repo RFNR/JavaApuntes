@@ -10,7 +10,8 @@ public class Persona {
     public Persona(String nombre){
         
         this.nombre = nombre;
-        Persona.contadorPersonas++; // Asi se recomienda acceder a los atributos estaticos de nuestra clase. Tambien se puede con this.contadorPersonas pero no se recomienda.
+        Persona.contadorPersonas++; // Asi se recomienda acceder a los atributos estaticos de nuestra clase. Tambien se puede 
+        // con this.contadorPersonas pero no se recomienda.
         this.idPersona = Persona.contadorPersonas;
             
     }

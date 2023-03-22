@@ -13,7 +13,7 @@ public class Producto {
         /*
         Aca se inicializa el metodo por primera vez, por eso no da error.
         Si tratamos de reasignar su valor con un metodo set, nos tira error 
-        porque idProducto es un metodo final.
+        porque idProducto es una variable final.
         */
     }
     
