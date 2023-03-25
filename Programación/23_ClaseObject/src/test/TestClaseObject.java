@@ -6,6 +6,8 @@ public class TestClaseObject {
     public static void main(String[] args) {
         
         /*
+        https://www.youtube.com/watch?v=VLkYwfpCWm0
+        
         Los metodos equals y hascode que trae la clase Object se pueden reescribir segun los criterios del IDE insertando codigo automatico.
         Se recomienda que ambos metodos sean insertados siguiendo las sugerencias del IDE. 
         Usando los metodos de la clase object: https://foro.elhacker.net/java/aporte_clase_object_del_paquete_javalang-t372378.0.html
@@ -25,7 +27,7 @@ public class TestClaseObject {
         
         /*
         El valor de hascode se realiza a traves de un calculo matematico particular en cada IDE que toma en cuenta las variables, metodos,
-        etc. Existe la posibilidad que un objeto creado con la misma clase u otro objeto creado con otra clase, tambien tengaN el mismo 
+        etc. Existe la posibilidad que un objeto creado con la misma clase u otro objeto creado con otra clase, tambien tengan el mismo 
         valor de hashcode, por lo tanto, tener este dato en cuenta aunque la posibilidad sea muy poca.
         */
         

@@ -8,6 +8,8 @@ public class Rectangulo extends FiguraGeometrica {
     
     @Override // Las clases hijas de una clase abstract deben definir los metodos abstrac. De no hacerlo, la clase hija tambien tiene que ser abstract. 
     public void dibujar(){
+        
+        // https://www.techiedelight.com/es/determine-class-name-java/
         System.out.println("Se imprime un: " + this.getClass().getSimpleName());
     }
 }

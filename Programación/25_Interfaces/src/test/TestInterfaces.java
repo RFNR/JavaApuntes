@@ -10,8 +10,7 @@ public class TestInterfaces {
         // le asignamos una clase que implemente esa interfaz. Observar que esto es casting. 
         
         // Por casting.. 
-        datos.listar(); // Listar desde Mysql
-        
+        datos.listar(); // Listar desde Mysql  
         // imprimir(datos); // Listar desde Mysql
         
         datos = new ImplementacionOracle(); // -> Esto es  IAccesoDatos datos = new ImplementacionOracle();

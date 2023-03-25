@@ -16,6 +16,8 @@ public class TestExcepciones {
         https://www.youtube.com/watch?v=_jRV15BExOs
         https://www.youtube.com/watch?v=Kxr-rZJ4WBk
         https://www.youtube.com/watch?v=I_VXPQkQJ_k
+        https://youtu.be/LvkxCgs5Lhw
+        
         */
         
         /*
@@ -23,7 +25,7 @@ public class TestExcepciones {
         
         try{
             resultado = 10/0; // Lanza la excepcion
-        }catch(Exception e){ // Exception se usa para excepciones generales, igual que Error en Javascipt.
+        }catch(Exception e){ 
             System.out.println("Ocurrió un error: ");
             e.printStackTrace(System.out); // Una excepcion puede generar otras excepciones por lo que se formaria una pila de excepciones. 
 //          En ese caso imprimimos toda la pila de excepciones con el metodo de la excepcion printStackTrace(System.out). El argumento de
