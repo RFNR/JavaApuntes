@@ -1,14 +1,14 @@
-package conexionbd;
+
+package com.mypageweb.maven._conexionbd_maven;
 
 import java.sql.Connection;
-import java.sql.Statement;
-import java.sql.ResultSet;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class Conexion {
-
+    
     String bd = "administracion";
     String user = "root";
     String pass = "40404268";
@@ -29,6 +29,7 @@ public class Conexion {
 //          siempre antes de conectar con la BD.
 //                Class.forName(driver); -> Esta linea antes era requerida pero ya no. Se la puede omitir. En 
 //                apps locales no deberia haber problema si se omite, pero en app webs puede que sea requerida.
+                
                 
 //          La conexión a la BD está encapsulada en un objeto Connection. Para su creación
 //          debemos proporcionar la url de la BD y, si la BD está protegida con contraseña, el login y
@@ -86,14 +87,9 @@ public class Conexion {
             
             JOptionPane.showMessageDialog(null, "Conexion realizada con exito.");
 
-        } catch (SQLException e) {
-//          https://www.arquitecturajava.com/java-try-catch-y-su-manejo/
-//          https://spa.myservername.com/splatoon-3-recibira-otro-parche-esta-semana
+        } catch (Exception e) {
 
             JOptionPane.showMessageDialog(null, "Ocurrio un error al conectarse a la base de datos. " + e.toString());
-//          https://www.educative.io/answers/what-is-the-printstacktrace-method-in-java
-//          Si ocurre un error lo mandamos a imprimir con el argumento System.out
-            e.printStackTrace(System.out); 
 
         }
         return conn;
