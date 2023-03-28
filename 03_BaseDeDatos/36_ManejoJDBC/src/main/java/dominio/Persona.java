@@ -1,8 +1,6 @@
-
 package dominio;
 
 public class Persona {
-    
     private int idPersona;
     private String nombre;
     private String apellido;
@@ -83,5 +81,5 @@ public class Persona {
         sb.append('}');
         return sb.toString();
     }
-    
+
 }
