@@ -1,8 +1,8 @@
 
-
 package logica;
 
 import datos.Conexion;
+import static datos.Conexion.close;
 import java.sql.*;
 import java.util.*;
 import usuario.Usuario;
@@ -11,11 +11,13 @@ public class Comandos {
     
     List<Usuario> userList = new ArrayList();
     
+    // https://alldifferences.net/difference-between-executequery-executeupdate-and-execute/
+    
     public void seleccionar(){
         
-        Connection conn;
-        PreparedStatement stmt;
-        ResultSet rs;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
         Usuario user;
         
         try {
@@ -31,23 +33,34 @@ public class Comandos {
                 user = new Usuario(idUser, nombre, pass);
                 
                 System.out.println("User["+ idUser +"] = " + user);
+                
             }
             
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
         }
+        
     }
     
     public void insertar(Usuario usuario){
         
-        Connection conn;
-        PreparedStatement stmt; 
+        Connection conn = null;
+        PreparedStatement stmt = null; 
         
         try {
             conn = Conexion.obtenerConexion();
             stmt = conn.prepareStatement("INSERT INTO usuarios (usuario, password) VALUES(?, ?)");
             stmt.setString(1, usuario.getUsuario());
             stmt.setString(2, usuario.getPassword());
+            stmt.executeUpdate();
 //            userList = null;
             if(userList.size() == 0){
                 usuario.setIdUsuario(userList.size() + 1);
@@ -60,43 +73,54 @@ public class Comandos {
             }
             
             userList.add(usuario);
-            stmt.executeUpdate();
             System.out.println("Se inserto con exito el usuario = " + userList.get(userList.size() - 1));
             
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
         }
         
     }
     
     public void eliminarUsuario(int id){
     
-        Connection conn;
-        PreparedStatement stmt; 
+        Connection conn = null;
+        PreparedStatement stmt = null; 
         
         try {
             conn = Conexion.obtenerConexion();
             stmt = conn.prepareStatement("DELETE FROM usuarios WHERE id_usuario = ?");
             stmt.setInt(1, id);
-
+            stmt.executeUpdate();
             
             for (int i = 0; i < userList.size(); i++) {
                 if(userList.get(i).getIdUsuario() == id){
                     userList.remove(i);
+                    System.out.println("El usuario se ha eliminado correctamente.");
                 }
             }
             
-            stmt.executeUpdate();
-            System.out.println("El usuario se ha eliminado correctamente.");
-            
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
         }
     }
     
     public void actualizarNameUser(int id, String usuario){
-        Connection conn;
-        PreparedStatement stmt; 
+        Connection conn = null;
+        PreparedStatement stmt = null; 
         
         try {
             conn = Conexion.obtenerConexion();
@@ -115,12 +139,19 @@ public class Comandos {
             
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
         }
     }
     public void actualizarPassword(int id, String password){
         
-        Connection conn;
-        PreparedStatement stmt; 
+        Connection conn = null;
+        PreparedStatement stmt = null; 
         
         try {
             conn = Conexion.obtenerConexion();
@@ -139,11 +170,18 @@ public class Comandos {
             
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
         }
     }
     public void actualizarNameAndPassword(int id, String usuario, String password){
-        Connection conn;
-        PreparedStatement stmt; 
+        Connection conn = null;
+        PreparedStatement stmt = null; 
         
         try {
             conn = Conexion.obtenerConexion();
@@ -164,6 +202,13 @@ public class Comandos {
             
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
         }
     }
     
@@ -180,19 +225,26 @@ public class Comandos {
     }
     
     public void resetearDatos(){
-        Connection conn;
-        PreparedStatement stmt; 
+        Connection conn = null;
+        PreparedStatement stmt = null; 
         
         try {
             conn = Conexion.obtenerConexion();
             stmt = conn.prepareStatement("TRUNCATE TABLE usuarios");
-            stmt.executeUpdate();
+            stmt.execute();
             System.out.println("Los datos han sido reseteados.");
             
             userList = new ArrayList();
             
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
         }
         
     }

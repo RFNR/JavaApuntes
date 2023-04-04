@@ -7,7 +7,13 @@ import usuario.Usuario;
 public class Test {
 
     public static void main(String[] args) {
-        
+        /*
+        Al realizar estos comandos recordar que cuando run file se ejecuta, crea una nueva clase de comandos, 
+        por lo que en la lista local no se guardan los usuarios insertados anteriormente si no que se eliminan.
+        Los datos que si se mantienen son los de la base de datos. Por lo que es sugerible que para la realizacion
+        de pruebas, lo haga desde una base local sin registros. Podemos apoyarnos en el metodo resetearDatos para
+        este fin, ya que resetea los datos tanto de la lista local como la base de datos.
+        */
         Comandos comando = new Comandos();
         
         Usuario user = new Usuario("Tomiko", "111");
@@ -48,4 +54,5 @@ public class Test {
 //        comando.resetearDatos();
     }
 }
+
 
